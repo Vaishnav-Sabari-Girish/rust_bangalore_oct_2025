@@ -200,7 +200,7 @@ fn main() -> Result<(), Error<YourI2cError>> {
 
 ## MPU9250
 
-![image:width:100%](../examples/MPU9250/basic_mpu9250/basic_mpu9250.gif)
+![image:width:100%](./assets/mpu9250.gif)
 
 <!--end_slide-->
 
@@ -208,7 +208,7 @@ fn main() -> Result<(), Error<YourI2cError>> {
 
 ## MPU6050
 
-![image:width:100%](../examples/MPU6050/mpu6050_nrf/out.gif)
+![image:width:100%](./assets/mpu6050.gif)
 
 <!--end_slide-->
 
