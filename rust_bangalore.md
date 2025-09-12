@@ -7,6 +7,7 @@ theme :
         footer : 
             style: template
             left : "@Vaishnav-Sabari-Girish"
+            center: "{current_slide} / {total_slides}"
             right : "ヴァイシュナヴ。サバリ。ギリシュ"
 author : Vaishnav Sabari Girish
 ---
