@@ -1,5 +1,7 @@
 # Presentation of `hayasen`
 
+These are the slide of my Rust library [`hayasen`](https://github.com/Vaishnav-Sabari-Girish/Hayasen)
+
 This presentation can be presented using [`presenterm`](https://github.com/mfontanini/presenterm)
 
 You can install it using 
