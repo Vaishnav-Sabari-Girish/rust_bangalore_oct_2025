@@ -103,7 +103,7 @@ mpu6050 = []
 # Project `src/` directory
 
 ```bash +exec
-tree ../src/
+tree ./src/
 ```
 
 <!--end_slide-->
