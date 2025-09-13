@@ -58,7 +58,7 @@ fn main() {
 
 1. `hayasen` is an Embedded Rust library that supports multiple sensors for Embedded Systems.
 2. It provides a type-safe and unified API to interact with various sensors.
-3. Currently supports **MPU9250** and **MPU6050** IMU's. (Only I2C)
+3. Currently supports **MPU9250** and **MPU6050** IMUs. (Only I2C)
 4. Support for more sensors on the way.
 
 ## Links
@@ -72,7 +72,26 @@ fn main() {
 **Contributions are Welcome**
 
 <!--end_slide-->
+# Problem Statement
 
+1. Many sensor crates are **Outdated and Unmaintained**, leading to broken builds.
+2. Lack of a **Unified Interface** -> Each sensor driver has it's own style and API.
+3. Difficult for beginners to navigate **Error handling and Type safety**.
+
+![image:width:70%](./assets/ferris_grumpy.png)
+
+<!--end_slide-->
+
+# How `hayasen` solves it 
+
+1. Provides a **Unified Interface** and **Type-safe API** across supported sensors.
+2. **Actively Maintained** with latest Rust crate versions and testing on latest MCU boards.
+3. User-friendly API's which make it easier for beginners to navigate.
+4. Robust Error handling with easy-to-understand **Custom Error Messages**.
+
+![image:width:70%](./assets/dancing-ferris.gif)
+
+<!--end_slide-->
 # `Cargo.toml`
 
 ```toml
@@ -121,6 +140,21 @@ graph TD
     driver_file --Custom errors defined--> error_file
     error_file --> lib_file
 ```
+
+<!--end_slide-->
+
+# Why use a seperate `functions.rs` file to store function pointers ? 
+
+1. Each sensor gets its own struct of functions in functions.rs, keeping modules tidy and separate.
+<!--new_lines: 1-->
+
+2. lib.rs calls those per-sensor functions to build custom helpers and a friendly facade.
+
+<!--new_lines: 1-->
+3. **Result**: unified, consistent, feature‑gated API without allocations or messy cross-module coupling.
+
+
+![image:width:50%](./assets/clean-code.png)
 
 <!--end_slide-->
 
@@ -240,27 +274,26 @@ The below points explain why I have used Rust to create `hayasen`
 
 # Contributing
 
-## How to add a new sensor driver
+```mermaid +render +width:100%
+flowchart LR
+    subgraph Phase1[Step 1: Setup]
+        direction TB
+        A[Fork Repos : Hayasen and Hayasen-Examples] --> B[Clone Forked Repos]
+        B --> C["Add sensor driver as src/&lt;sensor&gt;.rs"]
+        C --> D[Add function pointers in src/functions.rs]
+    end
 
-1. Fork `Vaishnav-Sabari-Girish/Hayasen` and `Vaishnav-Sabari-Girish/Hayasen-Examples` and clone the forked repositories.
+    subgraph Phase2[Step 2 : Integration/Contribution]
+        direction TB
+        S:::hidden ~~~ E[Expose functions in src/lib.rs]
+        E --> F["Test on real hardware and all test results with output to the Hayasen-Examples repo (forked)"]
+        F --> G["Push to forked repos (origin), not upstream"]
+        G --> H[Open PR's for both repos]
+        classDef hidden display: none;
+    end
 
-<!--new_lines: 1-->
-2. Add you sensor driver file inside the `src/` directory and name it as `<sensor>.rs`.
-
-<!--new_lines: 1-->
-3. Add all the functions as function pointers in the `src/function.rs` file.
-
-<!--new_lines: 1-->
-4. Then add the function pointers as functions in `src/lib.rs` file. 
-
-<!--new_lines: 1-->
-5. Test it and add your test case to the `examples/` directory.
-
-<!--new_lines: 1-->
-6. Push to both fork remotes (**NOT** the upstream repos).
-
-<!--new_lines: 1-->
-7. Open a PR for both repos.
+    Phase1 --> Phase2
+```
 
 <!--end_slide-->
 # Live Demo
@@ -281,10 +314,26 @@ This is a WiFi/Zigbee enabled ESP32C6 dev board built by [](https://shop.pcbcupi
 
 ### MPU9250 9-axis Inertial Measurement Unit
 
-This is a 9-Axis IMU that can measure Aceleration (3-axis), Angular Velocity (3-axis) and Magnetic field (3-axis magnetometer)
+This is a 9-Axis IMU that can measure Acceleration (3-axis), Angular Velocity (3-axis) and Magnetic field (3-axis magnetometer)
 
 ![image:width:70%](./assets/mpu9250.jpg)
 
+<!--end_slide-->
+
+# What's next ?
+
+1. Add sensor support for more commonly used sensors like MAX30102, MQ135, Ultrasonic sensor etc.
+<!--new_lines: 1-->
+2. Add `async` support using `embedded-hal-async`
+
+<!--new_lines: 1-->
+3. Add SPI support for sensors which support both I2C and SPI like MPU9250 and MPU6050.
+
+<!--new_lines: 1-->
+4. Add a parameter which shows how much RAM or Flash each sensor uses for better memory management.
+
+
+![image:width:40%](./assets/whats_next.png)
 <!--end_slide-->
 
 ![image:width:100%](./assets/ty.png)
