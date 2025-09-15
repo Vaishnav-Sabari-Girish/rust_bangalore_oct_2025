@@ -33,6 +33,7 @@ fn main() {
       "Open Source",
       "Embedded Systems",
       "Rust",
+      "Linux",
       "CLI/TUI"
   ];
 
