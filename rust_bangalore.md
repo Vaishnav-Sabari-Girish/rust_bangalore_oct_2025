@@ -143,8 +143,59 @@ graph TD
 ```
 
 <!--end_slide-->
+# Function pointers in action
 
-# Why use a seperate `functions.rs` file to store function pointers ? 
+```d2 +render +width:100%
+func: |md
+`src/functions.rs`
+|
+func.shape: rectangle
+
+sensor: |md
+`src/<sensor>.rs`
+|
+sensor.shape: rectangle
+
+main: |md
+`src/lib.rs`
+|
+
+main.shape: rectangle
+
+func.eg: |rust
+pub verify_identity(): fn(&mut <sensor_struct><I2C>) -> Result<(), Error<E>>
+|
+
+sensor.eg: |rust
+pub verify_identity(&mut self) -> Result<(), Error<E>> {
+      // Code here
+}
+|
+
+main.eg: |rust
+sensor.verify_identity()
+|
+
+sensor.style.fill: transparent
+sensor.eg.style.fill: transparent
+sensor.eg.style.stroke: transparent
+
+
+func.style.fill: transparent
+func.eg.style.fill: transparent
+func.eg.style.stroke: transparent
+
+
+main.style.fill: transparent
+main.eg.style.fill: transparent
+main.eg.style.stroke: transparent
+
+direction: down
+sensor -> func -> main
+```
+<!--end_slide-->
+
+# Why use a separate `functions.rs` file to store function pointers ? 
 
 1. Each sensor gets its own struct of functions in functions.rs, keeping modules tidy and separate.
 <!--new_lines: 1-->
@@ -164,9 +215,10 @@ graph TD
 <!--new_lines: 2-->
 <!--alignment: center-->
 
-| Sensor Tested | Boards Used |
+| Sensor Tested  | Boards Used                                        |
 | -------------- | --------------- |
-| MPU9250 inertial measurement unit | Glyph C6 |
+| MPU9250 inertial measurement unit | Glyph C6                        |
+|                                   |                                 |
 | MPU6050 inertial measurement unit | Nordic nRF52840 Development Kit |
 
 
