@@ -167,7 +167,10 @@ pub verify_identity(): fn(&mut <sensor_struct><I2C>) -> Result<(), Error<E>>
 |
 
 sensor.eg: |rust
-pub verify_identity(&mut self) -> Result<(), Error<E>> {
+pub verify_identity<I2C>(&mut self) -> Result<(), Error<E>> 
+    where
+        I2C: I2c<Error = E>,
+{
       // Code here
 }
 |
