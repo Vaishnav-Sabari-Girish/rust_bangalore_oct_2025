@@ -213,6 +213,8 @@ sensor -> func -> main
 # Progress of the `hayasen` library
 
 <!--new_lines: 2-->
+
+## Completed
 <!--alignment: center-->
 
 | Sensor Tested  | Boards Used                                        |
@@ -221,6 +223,16 @@ sensor -> func -> main
 |                                   |                                 |
 | MPU6050 inertial measurement unit | Nordic nRF52840 Development Kit |
 
+
+<!--new_lines: 1-->
+<!--alignment: left-->
+## In progress
+<!--new_lines: 2-->
+<!--alignment: center-->
+
+| Sensor being tested | Board being used |
+| -------------- | --------------- |
+| BME280/BMP280 | Glyph C6 |
 
 <!--end_slide-->
 
