@@ -420,3 +420,5 @@ This is a 9-Axis IMU that can measure Acceleration (3-axis), Angular Velocity (3
 <!--new_lines: 1-->
 4. Bluesky: [](https://bsky.app/profile/vaishnav-dev.bsky.social)
 
+<!--new_lines: 1-->
+5. Blog: [](https://vaishnav.world/blog)
