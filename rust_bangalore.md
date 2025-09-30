@@ -76,7 +76,9 @@ fn main() {
 # Problem Statement
 
 1. Many sensor crates are **Outdated and Unmaintained**, leading to broken builds.
+<!--new_lines: 1-->
 2. Lack of a **Unified Interface** -> Each sensor driver has it's own style and API.
+<!--new_lines: 1-->
 3. Difficult for beginners to navigate **Error handling and Type safety**.
 
 ![image:width:70%](./assets/ferris_grumpy.png)
@@ -93,7 +95,7 @@ fn main() {
 <!--new_lines : 1-->
 4. Robust Error handling with easy-to-understand **Custom Error Messages**.
 
-![image:width:70%](./assets/crab-rave.gif)
+![image:width:80%](./assets/crab-rave.gif)
 
 <!--end_slide-->
 # `Cargo.toml`
@@ -144,6 +146,21 @@ graph TD
     driver_file --Custom errors defined--> error_file
     error_file --> lib_file
 ```
+
+<!--end_slide-->
+
+# What are Function Pointers and why use them ? 
+
+## Function Pointers
+
+1. They are variables that can store the address of a function, letting you call that function indirectly. 
+<!--new_lines: 1-->
+2. They allow passing functions as arguments or storing the functions inside a struct, enabling dynamic behaviour without rewriting code. 
+<!--new_lines: 1-->
+3. Since they can be stored in structs, it helps make the code more modular and understandable i.e each sensor's specific function pointers can be stored in a struct for that sensor.
+<!--new_lines: 1-->
+4. This also makes it easier to scale i.e add new sensor drivers, by just creating a sensor-specific struct in `functions.rs` and adding it's function pointers in that struct.
+
 
 <!--end_slide-->
 # Function pointers in action
@@ -247,7 +264,7 @@ sensor -> func -> main
 ## Adding the library using `cargo add`
 
 ```bash
-cargo add hayasen --features mpu6050 # OR mpu9250
+cargo add hayasen --features mpu9250 # OR mpu6050
 ```
 
 <!--new_lines: 1-->
@@ -266,7 +283,7 @@ edition = "2024"
 
 [dependencies]
 embedded-hal = "1.0.0"
-hayasen = { version = "0.0.8" , features = ["mpu6050"] }   # OR mpu9250
+hayasen = { version = "0.0.8" , features = ["mpu9250"] }   # OR mpu6050
 ```
 
 <!--end_slide-->
