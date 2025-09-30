@@ -86,11 +86,14 @@ fn main() {
 # How `hayasen` solves it 
 
 1. Provides a **Unified Interface** and **Type-safe API** across supported sensors.
+<!--new_lines : 1-->
 2. **Actively Maintained** with latest Rust crate versions and testing on latest MCU boards.
+<!--new_lines : 1-->
 3. User-friendly API's which make it easier for beginners to navigate.
+<!--new_lines : 1-->
 4. Robust Error handling with easy-to-understand **Custom Error Messages**.
 
-![image:width:70%](./assets/dancing-ferris.gif)
+![image:width:70%](./assets/crab-rave.gif)
 
 <!--end_slide-->
 # `Cargo.toml`
@@ -404,10 +407,6 @@ This is a 9-Axis IMU that can measure Acceleration (3-axis), Angular Velocity (3
 ![image:width:40%](./assets/whats_next.png)
 <!--end_slide-->
 
-![image:width:100%](./assets/ty.png)
-
-<!--end_slide-->
-
 # All my links
 
 1. **GitHub** : [](https://github.com/Vaishnav-Sabari-Girish)
@@ -422,3 +421,31 @@ This is a 9-Axis IMU that can measure Acceleration (3-axis), Angular Velocity (3
 
 <!--new_lines: 1-->
 5. Blog: [](https://vaishnav.world/blog)
+
+![image:width:50%](./assets/dancing-ferris.gif)
+
+<!--end_slide-->
+
+![image:width:100%](./assets/ty.png)
+
+<!--end_slide-->
+
+# Inspirations
+
+1. `embedded-sensors` Crate : [](https://crates.io/crates/embedded-sensors)
+
+<!--new_lines: 1-->
+
+2. `sensors` Crate : [](https://github.com/nyantec/sensors)
+
+<!--new_lines : 1-->
+
+# References
+
+1. Writing a Rust driver for MPU6050 : [](https://www.ashwinnarayan.com/post/rust-driver-mpu6050/)
+<!--new_lines : 1-->
+2. Rust of Espressif Book : [](https://docs.espressif.com/projects/rust/book/introduction.html)
+<!--new_lines : 1-->
+3. `Impl` Rust on ESP32 Book : [](https://esp32.implrust.com/index.html)
+<!--new_lines : 1-->
+4. `embedded-hal` Crate Documentation : [](https://docs.rs/embedded-hal/1.0.0/embedded_hal/)
