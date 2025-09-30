@@ -384,6 +384,14 @@ flowchart LR
 ```
 
 <!--end_slide-->
+
+# GitHub Repo Link
+
+```bash +exec
+curl -s qrenco.de/https://t.ly/4BVIA
+```
+
+<!--end_slide-->
 # Live Demo
 
 ## Hardware Used :
