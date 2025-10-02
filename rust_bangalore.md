@@ -428,7 +428,7 @@ This is a 9-Axis IMU that can measure Acceleration (3-axis), Angular Velocity (3
 
 # What's next ?
 
-1. Add sensor support for more commonly used sensors like MAX30102, MQ135, Ultrasonic sensor etc.
+1. Add sensor support for more commonly used sensors like MQ135, Ultrasonic sensor etc.
 <!--new_lines: 1-->
 2. Add `async` support using `embedded-hal-async`
 
