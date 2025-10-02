@@ -220,10 +220,10 @@ sensor -> func -> main
 
 # Why use a separate `functions.rs` file to store function pointers ? 
 
-1. Each sensor gets its own struct of functions in functions.rs, keeping modules tidy and separate.
+1. Each sensor gets its own struct of functions in `functions.rs`, keeping modules tidy and separate.
 <!--new_lines: 1-->
 
-2. lib.rs calls those per-sensor functions to build custom helpers and a friendly facade.
+2. `lib.rs` calls those per-sensor functions to build custom helpers and a friendly facade.
 
 <!--new_lines: 1-->
 3. **Result**: unified, consistent, feature‑gated API without allocations or messy cross-module coupling.
@@ -246,7 +246,7 @@ sensor -> func -> main
 |                                   |                                 |
 | MPU6050 inertial measurement unit | Nordic nRF52840 Development Kit |
 |                                   |                                 |
-| MAX30102 Pulse Oximeter abd Heart Rate Monitor | Glyph C6  |
+| MAX30102 Pulse Oximeter and Heart Rate Monitor | Glyph C6  |
 
 
 <!--new_lines: 1-->
