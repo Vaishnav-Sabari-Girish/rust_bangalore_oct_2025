@@ -253,9 +253,11 @@ sensor -> func -> main
 <!--new_lines: 2-->
 <!--alignment: center-->
 
-| Sensor being tested | Board being used |
-| -------------- | --------------- |
-| BME280/BMP280 | Glyph C6 |
+| Sensor being tested | Board being used      |
+| -------------- | --------------------- |
+| BME280/BMP280       | Glyph C6              |
+|                     |                       |
+| MAX30102            | Glyph C6/nRF52840     |
 
 <!--end_slide-->
 
