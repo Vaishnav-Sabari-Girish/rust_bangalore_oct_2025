@@ -245,6 +245,8 @@ sensor -> func -> main
 | MPU9250 inertial measurement unit | Glyph C6                        |
 |                                   |                                 |
 | MPU6050 inertial measurement unit | Nordic nRF52840 Development Kit |
+|                                   |                                 |
+| MAX30102 Pulse Oximeter abd Heart Rate Monitor | Glyph C6  |
 
 
 <!--new_lines: 1-->
@@ -256,8 +258,6 @@ sensor -> func -> main
 | Sensor being tested | Board being used      |
 | -------------- | --------------------- |
 | BME280/BMP280       | Glyph C6              |
-|                     |                       |
-| MAX30102            | Glyph C6/nRF52840     |
 
 <!--end_slide-->
 
@@ -321,7 +321,7 @@ fn main() -> Result<(), Error<YourI2cError>> {
 
 <!--end_slide-->
 
-# Outputs - 1
+# Output - 1
 
 ## MPU9250
 
@@ -329,11 +329,19 @@ fn main() -> Result<(), Error<YourI2cError>> {
 
 <!--end_slide-->
 
-# Outputs - 2
+# Output - 2
 
 ## MPU6050
 
 ![image:width:100%](./assets/mpu6050.gif)
+
+<!--end_slide-->
+
+# Output - 3
+
+## MAX30102
+
+![image:width:100%](./assets/max30102.gif)
 
 <!--end_slide-->
 
