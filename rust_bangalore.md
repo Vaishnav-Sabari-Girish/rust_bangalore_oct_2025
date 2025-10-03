@@ -1,6 +1,6 @@
 ---
 title: Hayasen
-sub_title : A Robust Embedded Rust Library for Multi-Sensor Integration
+sub_title : A Robust Embedded Rust Library which supports multiple sensors
 theme : 
     name : tokyonight-storm
     override : 
