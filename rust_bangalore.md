@@ -59,7 +59,7 @@ fn main() {
 
 1. `hayasen` is an Embedded Rust library that supports multiple sensors for Embedded Systems.
 2. It provides a type-safe and unified API to interact with various sensors.
-3. Currently supports **MPU9250** and **MPU6050** IMUs. (Only I2C)
+3. Currently supports **MPU9250** and **MPU6050** IMUs and MAX30102 Pulse Oximeter and Heart Rate Monitor. (Only I2C)
 4. Support for more sensors on the way.
 
 ## Links
@@ -122,6 +122,20 @@ embedded-hal = "1.0.0"
 default = []
 mpu9250 = []
 mpu6050 = []
+```
+
+<!--end_slide-->
+
+# Custom Errors enum `errors.rs`
+
+```rust
+pub enum Error<E> {
+    I2c(E),
+    InvalidData,
+    NotDetected,
+    ConfigError,
+    SensorSpecific(&'static str),
+}
 ```
 
 <!--end_slide-->
