@@ -103,7 +103,7 @@ fn main() {
 ```toml
 [package]
 name = "hayasen"
-version = "0.0.8"
+version = "0.0.9"
 edition = "2024"
 description = "A multi sensor library for Embedded Rust supporting multiple sensors"
 authors = ["Vaishnav-Sabari-Girish forgamesonly684@gmail.com"]
@@ -285,7 +285,7 @@ edition = "2024"
 
 [dependencies]
 embedded-hal = "1.0.0"
-hayasen = { version = "0.0.8" , features = ["mpu9250"] }   # OR mpu6050
+hayasen = { version = "0.0.9" , features = ["mpu9250"] }   # OR mpu6050
 ```
 
 <!--end_slide-->
